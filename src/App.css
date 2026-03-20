@@ -78,14 +78,23 @@
   transform: translateY(-50%);
 }
 
+.mobile-layout {
+  display: block;
+  min-height: 100svh;
+}
+
 .canvas {
   position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  min-height: 100svh;
   background: #fff;
   overflow: visible;
+}
+
+.nav-right,
+.nav-bottom {
+  display: none;
 }
 
 .portrait {
@@ -137,6 +146,13 @@
   text-align: right;
 }
 
+/* Desktop only - canvas fills viewport */
+@media (min-width: 769px) {
+  .canvas {
+    min-height: 100svh;
+  }
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
   .sidebar {
@@ -161,41 +177,62 @@
 /* Mobile */
 @media (max-width: 768px) {
   .layout {
-    display: flex;
-    flex-direction: column;
+    display: block;
     min-height: 100svh;
   }
 
   .sidebar {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    padding: 16px;
-    order: 1;
+    display: none;
   }
 
-  .nav-btn {
-    width: auto;
-    min-width: 100px;
-    padding: 12px 16px;
-    font-size: 12px;
-    min-height: 44px;
+  .mobile-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    gap: 0;
   }
 
   .canvas {
-    flex: 1;
-    min-height: 50svh;
-    order: 2;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
   }
 
   .portrait {
-    height: 70svh;
+    display: block;
+    height: 55svh;
+    width: auto;
     max-width: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+  }
+
+  .nav-right {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding: 12px;
+    flex-shrink: 0;
+  }
+
+  .nav-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding: 12px;
+    flex-shrink: 0;
+  }
+
+  .nav-right .nav-btn,
+  .nav-bottom .nav-btn {
+    width: 100%;
+    min-width: 0;
+    padding: 8px 12px;
+    font-size: 11px;
+    min-height: 40px;
   }
 
   .branding {
@@ -206,30 +243,53 @@
   }
 
   .branding-signature {
+    height: 100px;
+  }
+}
+
+/* Tall mobile */
+@media (max-width: 768px) and (min-height: 800px) {
+  .portrait {
+    height: 65svh;
+  }
+
+  .branding-signature {
     height: 120px;
   }
 }
 
 /* Small mobile */
 @media (max-width: 480px) {
-  .sidebar {
-    padding: 12px;
-    gap: 6px;
+  .nav-right .nav-btn,
+  .nav-bottom .nav-btn {
+    padding: 6px 8px;
+    font-size: 10px;
+    min-height: 36px;
   }
 
-  .nav-btn {
-    min-width: 80px;
-    padding: 10px 12px;
-    font-size: 10px;
-    min-height: 44px;
+  .nav-right,
+  .nav-bottom {
+    padding: 8px;
   }
 
   .portrait {
-    height: 60svh;
+    height: 50svh;
   }
 
   .branding-signature {
     height: 80px;
+  }
+}
+
+/* Extra small */
+@media (max-width: 360px) {
+  .nav-right .nav-btn {
+    min-width: 60px;
+    font-size: 9px;
+  }
+
+  .portrait {
+    height: 45svh;
   }
 }
 
