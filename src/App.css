@@ -19,6 +19,7 @@
   flex-direction: column;
   gap: 16px;
   background: #fff;
+  z-index: 10;
 }
 
 .nav-btn {
@@ -78,6 +79,7 @@
 }
 
 .canvas {
+  position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -197,13 +199,10 @@
   }
 
   .branding {
-    position: relative;
-    top: auto;
-    right: auto;
-    transform: none;
-    order: 3;
-    padding: 24px 16px;
-    align-items: center;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
   }
 
   .branding-signature {

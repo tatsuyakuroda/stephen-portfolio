@@ -29,14 +29,14 @@ function App() {
             alt="Stephen"
             className="portrait"
           />
+          <aside className="branding">
+            <img
+              src="/images/sign.png"
+              alt="Signature"
+              className="branding-signature"
+            />
+          </aside>
         </main>
-        <aside className="branding">
-          <img
-            src="/images/sign.png"
-            alt="Signature"
-            className="branding-signature"
-          />
-        </aside>
       </div>
     </div>
   )
