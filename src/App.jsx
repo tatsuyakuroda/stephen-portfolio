@@ -148,11 +148,13 @@ function App() {
             )}
           </section>
 
-          <div className="nav-bottom">
-            {PROJECTS.map((p) => (
-              <NavButton key={p.id} label={p.name} />
-            ))}
-          </div>
+          {activeTab !== 'DESIGN' && (
+            <div className="nav-bottom">
+              {PROJECTS.map((p) => (
+                <NavButton key={p.id} label={p.name} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
