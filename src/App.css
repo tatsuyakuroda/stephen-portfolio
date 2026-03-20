@@ -1,29 +1,29 @@
 .app {
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
   background: #fff;
 }
 
 .layout {
-  flex: 1;
-  display: flex;
-  align-items: center;
+  position: relative;
+  min-height: 100svh;
   background: #fff;
 }
 
 .sidebar {
+  position: absolute;
+  top: 50%;
+  left: 48px;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 48px 0 48px 48px;
   background: #fff;
 }
 
 .nav-btn {
   width: 280px;
   padding: 24px 32px;
-  font-family: 'Share Tech', 'Orbitron', system-ui, sans-serif;
+  font-family: 'Orbitron', system-ui, sans-serif;
   font-size: 28px;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -77,35 +77,61 @@
 }
 
 .canvas {
-  flex: 1;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  min-height: 100svh;
   background: #fff;
+  overflow: visible;
 }
 
 .portrait {
-  max-width: 100%;
-  max-height: 100svh;
-  height: auto;
+  display: block;
+  height: 90svh;
+  width: auto;
   object-fit: contain;
+  object-position: bottom;
+  vertical-align: bottom;
 }
 
-.footer {
-  font-family: 'Share Tech', 'Orbitron', system-ui, sans-serif;
-  color: #000;
-}
-
-.footer-marquee {
+.branding {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
   display: flex;
-  justify-content: center;
-  padding: 24px 0;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 200px;
 }
 
-.footer-marquee-img {
-  height: 80px;
+.branding-signature {
+  height: 160px;
   width: auto;
   display: block;
-  flex-shrink: 0;
 }
+
+.branding-tagline {
+  font-family: 'Orbitron', monospace;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: #000;
+  margin: 0;
+  text-transform: lowercase;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.branding-year {
+  font-family: 'Orbitron', monospace;
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #000;
+  margin: 0;
+  line-height: 1;
+  text-align: right;
+}
+
 

@@ -30,16 +30,14 @@ function App() {
             className="portrait"
           />
         </main>
-      </div>
-      <footer className="footer">
-        <div className="footer-marquee">
+        <aside className="branding">
           <img
-            src="/images/footertext.png"
-            alt="10 years of experience in AI software engineering"
-            className="footer-marquee-img"
+            src="/images/sign.png"
+            alt="Signature"
+            className="branding-signature"
           />
-        </div>
-      </footer>
+        </aside>
+      </div>
     </div>
   )
 }
