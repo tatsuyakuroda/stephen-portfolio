@@ -8,8 +8,18 @@ function App() {
       <div className="layout">
         <nav className="sidebar">
           {navItems.map((label) => (
-            <button key={label} type="button" className="nav-btn">
-              {label}
+            <button
+              key={label}
+              type="button"
+              className="nav-btn"
+              data-animation="both"
+            >
+              <span className="nav-btn-text">
+                <span className="nav-btn-text-track">
+                  <span>{label}</span>
+                  <span aria-hidden="true">{label}</span>
+                </span>
+              </span>
             </button>
           ))}
         </nav>
